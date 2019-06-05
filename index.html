@@ -2,48 +2,63 @@
 <html>
 <head>
 	<title>Calorie Counter</title>
-	<link rel="stylesheet" type="text/css" href="CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="author" content="name">
+	<meta name="description" content="description here">
+	<meta name="keywords" content="keywords,here">
 </head>
 
 <body>
-	<div class="into">
-		<h2>How many calories can you consume?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
+	
+	<h1>How many calories can you consume?</h1>
+		
 	<form class="form">
-		Age:
-			<input type="text" name="age" placeholder="in years">
-		<br>
-		Height:
-			<input type="text" name="height" placeholder="in cm">
-		<br>
-		Weight:
-			<input type="text" name="weight" placeholder="in kg">
-		<br>
-		<input type="radio" name="gender" value="male" checked>Male <br>
-		<input type="radio" name="gender" value="male">Female <br>
-
-
+		<div>
+			<input type="radio" name="units" id="metric" checked>Metric
+			<input type="radio" name="units" id="imperial">Imperial
+		</div>
+		<div>
+			Age:
+			<input type="text" name="age" id="age" placeholder="in years">
+		</div>
+		<div>
+			Height:
+			<input type="text" name="height" id="height" placeholder="in cm">
+			<input type="text" class="hidden" name="height" id="heightInches" placeholder="inches">
+		</div>
+		<div>
+			Weight:
+			<input type="text" name="weight" id="weight" placeholder="in kg">		
+		</div>
+		<div>
+			Please select your activity level:
+			<select name="activity" id="activity">
+				<option value="1.2">No Exercise</option>
+				<option value="1.3">Moderately Active</option>
+				<option value="1.4">Active</option>
+				<option value="1.6">Very Active</option>
+				<option value="1.9">Extremely Active</option>
+				
+			</select>
+		</div>
+		<div>
+			<input type="radio" name="gender" id="male" checked>Male 
+			<input type="radio" name="gender" id="female">Female 
+		</div>
+		<input type="button" name="submit" value="Submit" id="submit">
 	</form>
-	<div class="info">
-		<div class="info-text">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		</div>
-		<div class="info-text">
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		</div>
-		<div class="info-text">
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</div>
+
+	<div>
+		<p>To keep your current weight your daily calorie intake is <span id="maintainWeight"></span> calories</p>
+		<p>To lose <span id="lose">0.5kg</span> a week, your daily calorie intake is <span id="loseWeight"></span> calories</p>
+		<p>To gain <span id="gain">0.5kg</span> a week, your daily calorie intake is <span id="gainWeight"></span> calories</p>
+		<p>Your Base Metabolic Rate (BMI) is <span id="BMI"></span> calories</p>
 	</div>
+	
+	<script src="scripts/main.js"></script>
 </body>
 
 </html>
