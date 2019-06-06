@@ -7,8 +7,9 @@ var metric = document.getElementById("metric");
 var imperial = document.getElementById("imperial");
 var heightInches = document.getElementById("heightInches");
 var dailyIntake
+var gender
 
-//change units
+//changes units 
 metric.addEventListener("change", function(){
     if(this.checked){
         height.placeholder = "in cm"
@@ -30,12 +31,6 @@ imperial.addEventListener("change", function(){
     }
 });
 
- //check gender
-if (male.checked = true){
-    var gender = 5;
-} else {
-    gender = -161
-}
 
 //calculates calorie intake
 function calculateCalories(){
@@ -50,15 +45,25 @@ function calculateCalories(){
 
 
 
-// Lsten for submit
+//Listen for submit
 document.getElementById("submit").addEventListener("click", function(){
 
-        // check limits for inputs
-        if (16 > age.value >= 80|| height.value <= 0 || 0 >= heightInches.value < 12 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(heightInches.value)|| isNaN(weight.value)){
+        // check inputs for errors
+        if (16 > age.value > 80|| height.value <= 0 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(weight.value)){
+            document.getElementById("errorValue").classList.add("reveal");
+        } else if(metric.checked != true && 0 >= heightInches.value > 12 ){
             document.getElementById("errorValue").classList.add("reveal");
         } else if (age.value == "" || height.value == "" || heightInches.value == "" || weight.value == ""){
             document.getElementById("errorEmpty").classList.add("reveal");
         } else { 
+
+            //check gender
+            if (male.checked = true){
+                gender = 5;
+            } else {
+                gender = -161
+            }
+
              calculateCalories();
 
             //output text in document
@@ -72,5 +77,4 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("errorValue").classList.remove("reveal");
             document.getElementById("errorEmpty").classList.remove("reveal");  
         }  
-        console.log(age.value);
 }); 
