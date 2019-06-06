@@ -8,15 +8,6 @@ var imperial = document.getElementById("imperial");
 var heightInches = document.getElementById("heightInches");
 var dailyIntake
 
-//
-document.getElementById("submit").addEventListener("click", function(){
-    calculateCalories();
-    document.getElementById("maintainWeight").innerHTML = dailyIntake
-    document.getElementById("loseWeight").innerHTML = dailyIntake - 500
-    document.getElementById("gainWeight").innerHTML = dailyIntake + 500
-    document.getElementById("BMI").innerHTML = dailyIntake / activity.value
-});
-
 //change units
 metric.addEventListener("change", function(){
     if(this.checked){
@@ -37,16 +28,17 @@ imperial.addEventListener("change", function(){
         document.getElementById("lose").innerHTML = "1.1 lbs"
         document.getElementById("gain").innerHTML = "1.1 lbs"
     }
-})
+});
+
+ //check gender
+if (male.checked = true){
+    var gender = 5;
+} else {
+    gender = -161
+}
 
 //calculates calorie intake
 function calculateCalories(){
-    //check gender
-    if (male.checked = true){
-        var gender = 5;
-    } else {
-        gender = -161
-    }
     //check for units
     if(metric.checked = true){
         dailyIntake = (10 * weight.value + 6.25 * height.value - 5 * age.value + gender) * activity.value;
@@ -54,4 +46,31 @@ function calculateCalories(){
         height = heightInches.value + height.value * 12
         dailyIntake = (4.536 * weight.value + 15.88 * height - 5 * age.value + gender) * activity.value;
     }
-}
+}   
+
+
+
+// Lsten for submit
+document.getElementById("submit").addEventListener("click", function(){
+
+        // check limits for inputs
+        if (16 > age.value >= 80|| height.value <= 0 || 0 >= heightInches.value < 12 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(heightInches.value)|| isNaN(weight.value)){
+            document.getElementById("errorValue").classList.add("reveal");
+        } else if (age.value == "" || height.value == "" || heightInches.value == "" || weight.value == ""){
+            document.getElementById("errorEmpty").classList.add("reveal");
+        } else { 
+             calculateCalories();
+
+            //output text in document
+            document.getElementById("maintainWeight").innerHTML = dailyIntake
+            document.getElementById("loseWeight").innerHTML = dailyIntake - 500
+            document.getElementById("gainWeight").innerHTML = dailyIntake + 500
+            document.getElementById("BMI").innerHTML = dailyIntake / activity.value
+            document.getElementById("info").classList.add("text-info-reveal");
+
+            //clear error messages
+            document.getElementById("errorValue").classList.remove("reveal");
+            document.getElementById("errorEmpty").classList.remove("reveal");  
+        }  
+        console.log(age.value);
+}); 

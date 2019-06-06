@@ -13,7 +13,7 @@
 
 <body>
 	
-	<h1>How many calories can you consume?</h1>
+	<h1>How many calories can you consume each day?</h1>
 		
 	<form class="form">
 		<div>
@@ -41,7 +41,6 @@
 				<option value="1.4">Active</option>
 				<option value="1.6">Very Active</option>
 				<option value="1.9">Extremely Active</option>
-				
 			</select>
 		</div>
 		<div>
@@ -49,9 +48,11 @@
 			<input type="radio" name="gender" id="female">Female 
 		</div>
 		<input type="button" name="submit" value="Submit" id="submit">
+		<p class="hidden" id="errorValue">Please enter a number for your height and weight, and an age between 16 and 80.</p>
+		<p class="hidden" id="errorEmpty">Please enter you height, weight, and age.</p>
 	</form>
 
-	<div>
+	<div class="text-info" id="info">
 		<p>To keep your current weight your daily calorie intake is <span id="maintainWeight"></span> calories</p>
 		<p>To lose <span id="lose">0.5kg</span> a week, your daily calorie intake is <span id="loseWeight"></span> calories</p>
 		<p>To gain <span id="gain">0.5kg</span> a week, your daily calorie intake is <span id="gainWeight"></span> calories</p>

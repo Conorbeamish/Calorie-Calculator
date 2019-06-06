@@ -18,6 +18,15 @@ body {
 	display: block;
 }
 
+.text-info {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.text-info-reveal {
+	opacity: 1;
+}
+
 input[type=text]{
 	padding: 2px; 
 	margin: 2px;
