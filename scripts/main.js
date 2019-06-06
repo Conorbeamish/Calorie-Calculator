@@ -2,6 +2,7 @@ var age = document.getElementById("age");
 var height = document.getElementById("height");
 var weight = document.getElementById("weight");
 var male = document.getElementById("male");
+var female = document.getElementById("female"); 
 var activity = document.getElementById("activity");
 var metric = document.getElementById("metric");
 var imperial = document.getElementById("imperial");
@@ -18,6 +19,8 @@ metric.addEventListener("change", function(){
         heightInches.classList.remove("reveal");
         document.getElementById("lose").innerHTML = "0.5kg"
         document.getElementById("gain").innerHTML = "0.5kg"
+        document.getElementById("calorieForm").reset();
+        document.getElementById("metric").checked = true;
     }
 });
 imperial.addEventListener("change", function(){
@@ -28,9 +31,10 @@ imperial.addEventListener("change", function(){
         heightInches.classList.remove("hidden");
         document.getElementById("lose").innerHTML = "1.1 lbs"
         document.getElementById("gain").innerHTML = "1.1 lbs"
+        document.getElementById("calorieForm").reset();
+        document.getElementById("imperial").checked = true;
     }
 });
-
 
 //calculates calorie intake
 function calculateCalories(){
@@ -44,7 +48,6 @@ function calculateCalories(){
 }   
 
 
-
 //Listen for submit
 document.getElementById("submit").addEventListener("click", function(){
 
@@ -53,14 +56,14 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("errorValue").classList.add("reveal");
         } else if(metric.checked != true && 0 >= heightInches.value > 12 ){
             document.getElementById("errorValue").classList.add("reveal");
-        } else if (age.value == "" || height.value == "" || heightInches.value == "" || weight.value == ""){
+        } else if (age.value == "" || height.value == "" || weight.value == ""){
             document.getElementById("errorEmpty").classList.add("reveal");
         } else { 
 
             //check gender
             if (male.checked = true){
                 gender = 5;
-            } else {
+            } else if (female.checked = true){
                 gender = -161
             }
 
