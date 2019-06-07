@@ -52,7 +52,7 @@ function calculateCalories(){
 document.getElementById("submit").addEventListener("click", function(){
 
         // check inputs for errors
-        if (16 > age.value > 80|| height.value <= 0 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(weight.value)){
+        if (80 < age.value || age.value < 16 || height.value <= 0 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(weight.value)){
             document.getElementById("errorValue").classList.add("reveal");
         } else if(metric.checked != true && 0 >= heightInches.value > 12 ){
             document.getElementById("errorValue").classList.add("reveal");
@@ -67,7 +67,7 @@ document.getElementById("submit").addEventListener("click", function(){
                 gender = -161
             }
 
-             calculateCalories();
+            calculateCalories();
 
             //output text in document
             document.getElementById("maintainWeight").innerHTML = dailyIntake
