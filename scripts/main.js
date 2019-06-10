@@ -36,6 +36,16 @@ imperial.addEventListener("change", function(){
     }
 });
 
+//Clears text
+document.getElementById("clear").addEventListener("click", function() {
+    document.getElementById("calorieForm").reset();
+    document.getElementById("errorValue").classList.remove("reveal");
+    document.getElementById("errorEmpty").classList.remove("reveal");
+    document.getElementById("info").classList.remove("text-info-reveal"); 
+});
+
+
+
 //calculates calorie intake
 function calculateCalories(){
     //check for units
@@ -46,7 +56,6 @@ function calculateCalories(){
         dailyIntake = (4.536 * weight.value + 15.88 * height - 5 * age.value + gender) * activity.value;
     }
 }   
-
 
 //Listen for submit
 document.getElementById("submit").addEventListener("click", function(){
