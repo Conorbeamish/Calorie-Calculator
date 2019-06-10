@@ -49,7 +49,7 @@ document.getElementById("clear").addEventListener("click", function() {
 //calculates calorie intake
 function calculateCalories(){
     //check for units
-    if(metric.checked = true){
+    if(metric.checked == true){
         dailyIntake = (10 * weight.value + 6.25 * height.value - 5 * age.value + gender) * activity.value;
     } else {
         height = heightInches.value + height.value * 12
@@ -69,11 +69,11 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("errorEmpty").classList.add("reveal");
         } else { 
 
-            //check gender
-            if (male.checked = true){
-                gender = 5;
-            } else if (female.checked = true){
-                gender = -161
+            //check gender & default to male
+            if (female.checked == true){
+                gender = -161;
+            } else {
+                gender = 5
             }
 
             calculateCalories();
