@@ -9,6 +9,7 @@ var imperial = document.getElementById("imperial");
 var heightInches = document.getElementById("heightInches");
 var dailyIntake
 var gender
+var heightImperial
 
 //changes units 
 metric.addEventListener("change", function(){
@@ -52,8 +53,8 @@ function calculateCalories(){
     if(metric.checked == true){
         dailyIntake = (10 * weight.value + 6.25 * height.value - 5 * age.value + gender) * activity.value;
     } else {
-        height = heightInches.value + height.value * 12
-        dailyIntake = (4.536 * weight.value + 15.88 * height - 5 * age.value + gender) * activity.value;
+        heightImperial = height.value * 12 + +heightInches.value
+        dailyIntake = (4.536 * weight.value + 15.88 * heightImperial - 5 * age.value + gender) * activity.value;
     }
 }   
 
@@ -79,7 +80,7 @@ document.getElementById("submit").addEventListener("click", function(){
             calculateCalories();
 
             //output text in document
-            document.getElementById("maintainWeight").innerHTML = dailyIntake
+            document.getElementById("maintainWeight").innerHTML = dailyIntake 
             document.getElementById("loseWeight").innerHTML = dailyIntake - 500
             document.getElementById("gainWeight").innerHTML = dailyIntake + 500
             document.getElementById("BMI").innerHTML = dailyIntake / activity.value
@@ -89,4 +90,13 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("errorValue").classList.remove("reveal");
             document.getElementById("errorEmpty").classList.remove("reveal");  
         }  
+        console.log(age.value);
+        console.log(height.value);
+        console.log(heightInches.value);
+        console.log(heightImperial);
+        console.log(weight.value);
+        console.log(activity.value);
+        console.log(gender);
+        console.log(dailyIntake);
 }); 
+
