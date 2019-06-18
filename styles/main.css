@@ -19,7 +19,7 @@ a:hover {
 .landing-container{
 	margin-left: auto;
 	margin-right: 0;
-	width: 50%;
+	width: 80%;
 	padding: 1rem;
 	background-color: rgba(255, 186, 84, .5);
 }
@@ -27,13 +27,13 @@ a:hover {
 .calculator-container {
 	margin-left: 0;
 	margin-right: auto;
-	width: 60%;
+	width: 80%;
 	padding: 1rem;
 	background-color: rgba(130, 190, 94, 0.5);
 }
 
-.container {
-	width: 60%;
+.info-container {
+	width: 80%;
 	padding: 1rem;
 	margin-left:auto;
 	margin-right:auto;
@@ -72,6 +72,7 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	margin-bottom: .5rem;
 }
 
 #landing-intro{
@@ -84,10 +85,6 @@ a:hover {
 	background-image: url("../images/food.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-
-#more-info{
-
 }
 
 input[type=text]{
@@ -104,4 +101,16 @@ input[type=button] {
 	font-weight: bolder;
 	background: black;
 	cursor: pointer;
+}
+
+@media only screen and (min-width: 600px){
+	.landing-container {
+		width:50%;
+	}
+	.calculator-container{
+		width:50%;
+	}
+	.info-container{
+		width:60%;
+	}
 }

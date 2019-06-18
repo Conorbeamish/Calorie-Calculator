@@ -49,12 +49,20 @@ document.getElementById("clear").addEventListener("click", function() {
 
 //calculates calorie intake
 function calculateCalories(){
+    //check gender & default to male
+    if (female.checked == true){
+        gender = -161;
+    } else {
+        gender = 5
+    }
     //check for units
     if(metric.checked == true){
-        dailyIntake = (10 * weight.value + 6.25 * height.value - 5 * age.value + gender) * activity.value;
+        BMI = (10 * weight.value + 6.25 * height.value - 5 * age.value + gender) 
+        dailyIntake = BMI * activity.value;
     } else {
         heightImperial = height.value * 12 + +heightInches.value
-        dailyIntake = (4.536 * weight.value + 15.88 * heightImperial - 5 * age.value + gender) * activity.value;
+        BMI = (4.536 * weight.value + 15.88 * heightImperial - 5 * age.value + gender) 
+        dailyIntake = BMI * activity.value;
     }
 }   
 
@@ -70,33 +78,18 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("errorEmpty").classList.add("text-info-reveal");
         } else { 
 
-            //check gender & default to male
-            if (female.checked == true){
-                gender = -161;
-            } else {
-                gender = 5
-            }
-
             calculateCalories();
 
             //output text in document
-            document.getElementById("maintainWeight").innerHTML = dailyIntake 
-            document.getElementById("loseWeight").innerHTML = dailyIntake - 500
-            document.getElementById("gainWeight").innerHTML = dailyIntake + 500
-            document.getElementById("BMI").innerHTML = dailyIntake / activity.value
+            document.getElementById("maintainWeight").innerHTML = Math.round(dailyIntake)
+            document.getElementById("loseWeight").innerHTML = Math.round(dailyIntake - 500)
+            document.getElementById("gainWeight").innerHTML = Math.round(dailyIntake + 500)
+            document.getElementById("BMI").innerHTML = Math.round(BMI)
             document.getElementById("info").classList.add("text-info-reveal");
 
             //clear error messages
             document.getElementById("errorValue").classList.remove("text-info-reveal");
             document.getElementById("errorEmpty").classList.remove("text-info-reveal");  
         }  
-        console.log(age.value);
-        console.log(height.value);
-        console.log(heightInches.value);
-        console.log(heightImperial);
-        console.log(weight.value);
-        console.log(activity.value);
-        console.log(gender);
-        console.log(dailyIntake);
 }); 
 
