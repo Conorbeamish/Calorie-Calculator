@@ -1,21 +1,39 @@
 body {
-	font-family: Helvetica;
+	font-family: 'Roboto Slab', serif;
+	margin: 0;
 }
 
 a {
 	text-decoration: none;
-	color: black;
+	color: grey;
 }
 
 a:hover {
 	color: #ffba54;
 }
 
-.container {
+.landing-container{
 	margin-left: auto;
-	margin-right: auto;
-	width: 80%;
+	margin-right: 0;
+	width: 50%;
 	padding: 1rem;
+	background-color: rgba(255, 186, 84, .5);
+}
+
+.calculator-container {
+	margin-left: 0;
+	margin-right: auto;
+	width: 60%;
+	padding: 1rem;
+	background-color: rgba(130, 190, 94, 0.5);
+}
+
+.container {
+	width: 60%;
+	padding: 1rem;
+	margin-left:auto;
+	margin-right:auto;
+	
 }
 
 .form {
@@ -45,8 +63,17 @@ a:hover {
 	opacity: 1;
 }
 
+#footer {
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 #landing-intro{
-	background-color: #efedd6
+	background-image: url("../images/food2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #calculator-results{
