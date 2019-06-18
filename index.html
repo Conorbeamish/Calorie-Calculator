@@ -13,54 +13,73 @@
 
 <body>
 	
-	<h1>How many calories can you consume each day?</h1>
-		
-	<form class="form" id="calorieForm">
-		<div>
-			<input type="radio" name="units" id="metric" checked>Metric
-			<input type="radio" name="units" id="imperial">Imperial
+	<section id = "landing-intro">
+		<div class= "container">
+			<h1>The Calorie Calculator</h1>
+			<p>Whether you are looking how to lose weight or the best way to gain muscle mass, the answer comes down to a simple calculation to work out how many calories you need to consume each day. Calories in vs calories out.</p>
+			<p>We simply work out your Base Metabolic Rate (BMR) based on certain factors and compare this to your activity level to recommend suitable calorie intake for you.</p>		
 		</div>
-		<div>
-			Age:
-			<input type="text" name="age" id="age" placeholder="in years">
+	</section>
+	
+	<section id= "calculator-results">
+		<div class="container">
+			<h2>How many calories can you consume each day?</h2>
+			<form class="form" id="calorieForm">
+				<div>
+					<input type="radio" name="units" id="metric" checked>Metric
+					<input type="radio" name="units" id="imperial">Imperial
+				</div>
+				<div>
+					Age:
+					<input type="text" name="age" id="age" placeholder="in years">
+				</div>
+				<div>
+					Height:
+					<input type="text" name="height" id="height" placeholder="in cm">
+					<input type="text" class="hidden" name="height" id="heightInches" placeholder="inches">
+				</div>
+				<div>
+					Weight:
+					<input type="text" name="weight" id="weight" placeholder="in kg">		
+				</div>
+				<div>
+					Please select your activity level:
+					<select name="activity" id="activity">
+						<option value="1.2">No Exercise</option>
+						<option value="1.3">Moderately Active</option>
+						<option value="1.4">Active</option>
+						<option value="1.6">Very Active</option>
+						<option value="1.9">Extremely Active</option>
+					</select>
+				</div>
+				<div>
+					<input type="radio" name="gender" id="male" checked>Male 
+					<input type="radio" name="gender" id="female">Female 
+				</div>
+				<div>
+					<input type="button" name="submit" value="Submit" id="submit">
+					<input type="button" name="clear" value="Clear" id="clear">		
+				</div>
+				<p class="hidden" id="errorValue">Please enter a number for your height and weight, and an age between 16 and 80.</p>
+				<p class="hidden" id="errorEmpty">Please enter your height, weight, and age.</p>
+			</form>
+	
+			<div class="text-info" id="info">
+				<p>To keep your current weight your daily calorie intake is <span id="maintainWeight"></span> calories</p>
+				<p>To lose <span id="lose">0.5kg</span> a week, your daily calorie intake is <span id="loseWeight"></span> calories</p>
+				<p>To gain <span id="gain">0.5kg</span> a week, your daily calorie intake is <span id="gainWeight"></span> calories</p>
+				<p>Your Base Metabolic Rate (BMI) is <span id="BMI"></span> calories</p>
+			</div>
 		</div>
-		<div>
-			Height:
-			<input type="text" name="height" id="height" placeholder="in cm">
-			<input type="text" class="hidden" name="height" id="heightInches" placeholder="inches">
-		</div>
-		<div>
-			Weight:
-			<input type="text" name="weight" id="weight" placeholder="in kg">		
-		</div>
-		<div>
-			Please select your activity level:
-			<select name="activity" id="activity">
-				<option value="1.2">No Exercise</option>
-				<option value="1.3">Moderately Active</option>
-				<option value="1.4">Active</option>
-				<option value="1.6">Very Active</option>
-				<option value="1.9">Extremely Active</option>
-			</select>
-		</div>
-		<div>
-			<input type="radio" name="gender" id="male" checked>Male 
-			<input type="radio" name="gender" id="female">Female 
-		</div>
-		<div>
-			<input type="button" name="submit" value="Submit" id="submit">
-			<input type="button" name="clear" value="Clear" id="clear">		
-		</div>
-		<p class="hidden" id="errorValue">Please enter a number for your height and weight, and an age between 16 and 80.</p>
-		<p class="hidden" id="errorEmpty">Please enter your height, weight, and age.</p>
-	</form>
+	</section>
 
-	<div class="text-info" id="info">
-		<p>To keep your current weight your daily calorie intake is <span id="maintainWeight"></span> calories</p>
-		<p>To lose <span id="lose">0.5kg</span> a week, your daily calorie intake is <span id="loseWeight"></span> calories</p>
-		<p>To gain <span id="gain">0.5kg</span> a week, your daily calorie intake is <span id="gainWeight"></span> calories</p>
-		<p>Your Base Metabolic Rate (BMI) is <span id="BMI"></span> calories</p>
-	</div>
+	<section id="more-info">
+		<div class="container">	
+			<h2>More information</h2>
+			<p>For more information on the effects of weight on your health <a href="https://www.nhs.uk/live-well/healthy-weight/start-the-nhs-weight-loss-plan/">this page</a> on the NHS website offers great advice and gives support for your weight loss plan.</p>
+			<p>If you would like to find out more about factors that affect your BMR or information on the Mifflin St Joer Equation that we use to calculate BMR you can <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">click here</a>.</p>
+		</div>
+	</section>
 	
 	<script src="scripts/main.js"></script>
 </body>

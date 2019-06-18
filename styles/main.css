@@ -1,14 +1,31 @@
 body {
 	font-family: Helvetica;
+}
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #ffba54;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding: 1rem;
 }
 
 .form {
 	padding: 10px;
-	width: 80%;
 	border: 2px solid black;
-	display: flex;
-	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	color:white;
+	background: rgba(0,0,0,0.5);
 }
 
 .hidden {
@@ -28,9 +45,22 @@ body {
 	opacity: 1;
 }
 
+#landing-intro{
+	background-color: #efedd6
+}
+
+#calculator-results{
+	background-image: url("../images/food.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#more-info{
+
+}
+
 input[type=text]{
 	padding: 2px; 
 	margin: 2px;
 	width: 50%;
-
 }
