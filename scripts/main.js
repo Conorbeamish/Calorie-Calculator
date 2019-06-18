@@ -63,11 +63,11 @@ document.getElementById("submit").addEventListener("click", function(){
 
         // check inputs for errors
         if (80 < age.value || age.value < 16 || height.value <= 0 || weight.value < 0 || isNaN(age.value) || isNaN(height.value) || isNaN(weight.value)){
-            document.getElementById("errorValue").classList.add("reveal");
+            document.getElementById("errorValue").classList.add("text-info-reveal");
         } else if(metric.checked != true && 0 >= heightInches.value > 12 ){
-            document.getElementById("errorValue").classList.add("reveal");
+            document.getElementById("errorValue").classList.add("text-info-reveal");
         } else if (age.value == "" || height.value == "" || weight.value == ""){
-            document.getElementById("errorEmpty").classList.add("reveal");
+            document.getElementById("errorEmpty").classList.add("text-info-reveal");
         } else { 
 
             //check gender & default to male
@@ -87,8 +87,8 @@ document.getElementById("submit").addEventListener("click", function(){
             document.getElementById("info").classList.add("text-info-reveal");
 
             //clear error messages
-            document.getElementById("errorValue").classList.remove("reveal");
-            document.getElementById("errorEmpty").classList.remove("reveal");  
+            document.getElementById("errorValue").classList.remove("text-info-reveal");
+            document.getElementById("errorEmpty").classList.remove("text-info-reveal");  
         }  
         console.log(age.value);
         console.log(height.value);

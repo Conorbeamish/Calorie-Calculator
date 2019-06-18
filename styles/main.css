@@ -12,6 +12,10 @@ a:hover {
 	color: #ffba54;
 }
 
+.form-text {
+	padding: 0.5rem;
+}
+
 .landing-container{
 	margin-left: auto;
 	margin-right: 0;
@@ -51,7 +55,7 @@ a:hover {
 }
 
 .reveal {
-	display: block;
+	display:inline;
 }
 
 .text-info {
@@ -89,5 +93,15 @@ a:hover {
 input[type=text]{
 	padding: 2px; 
 	margin: 2px;
-	width: 50%;
+	width: 25%;
+}
+
+input[type=button] {
+	text-decoration: none;
+	border: none;
+	color: white;
+	padding: 0.5rem;
+	font-weight: bolder;
+	background: black;
+	cursor: pointer;
 }

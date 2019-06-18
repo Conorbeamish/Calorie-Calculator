@@ -26,46 +26,46 @@
 	<section id= "calculator-results">
 		<div class="calculator-container">
 			<h2>How many calories can you consume each day?</h2>
+			<div class="text-info" id="errorValue">Please enter a number for your height and weight, and an age between 16 and 80.</div>
+			<div class="text-info" id="errorEmpty">Please enter your height, weight, and age.</div>
 			<form class="form" id="calorieForm">
-				<div>
+				<div class="form-text">
 					<input type="radio" name="units" id="metric" checked>Metric
 					<input type="radio" name="units" id="imperial">Imperial
 				</div>
-				<div>
-					Age:
+				<div class="form-text">
+					Age:   
 					<input type="text" name="age" id="age" placeholder="in years">
 				</div>
-				<div>
+				<div class="form-text">
 					Height:
-					<input type="text" name="height" id="height" placeholder="in cm">
+					<input type="text" class="reveal" name="height" id="height" placeholder="in cm">
 					<input type="text" class="hidden" name="height" id="heightInches" placeholder="inches">
 				</div>
-				<div>
+				<div class="form-text">
 					Weight:
 					<input type="text" name="weight" id="weight" placeholder="in kg">		
 				</div>
-				<div>
+				<div class="form-text">
 					Please select your activity level:
 					<select name="activity" id="activity">
 						<option value="1.2">No Exercise</option>
-						<option value="1.3">Moderately Active</option>
-						<option value="1.4">Active</option>
-						<option value="1.6">Very Active</option>
-						<option value="1.9">Extremely Active</option>
+						<option value="1.3">Moderately Active (1-3 times a week)</option>
+						<option value="1.4">Active (4-5 times a week)</option>
+						<option value="1.6">Very Active (Exercise daily)</option>
+						<option value="1.9">Extremely Active (Athlete/Physical Job)</option>
 					</select>
 				</div>
-				<div>
+				<div class="form-text">
 					<input type="radio" name="gender" id="male" checked>Male 
 					<input type="radio" name="gender" id="female">Female 
 				</div>
-				<div>
+				<div class="form-text">
 					<input type="button" name="submit" value="Submit" id="submit">
 					<input type="button" name="clear" value="Clear" id="clear">		
 				</div>
-				<p class="hidden" id="errorValue">Please enter a number for your height and weight, and an age between 16 and 80.</p>
-				<p class="hidden" id="errorEmpty">Please enter your height, weight, and age.</p>
 			</form>
-	
+
 			<div class="text-info" id="info">
 				<p>To keep your current weight your daily calorie intake is <span id="maintainWeight"></span> calories</p>
 				<p>To lose <span id="lose">0.5kg</span> a week, your daily calorie intake is <span id="loseWeight"></span> calories</p>
